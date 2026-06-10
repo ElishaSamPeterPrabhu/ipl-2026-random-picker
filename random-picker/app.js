@@ -1,10 +1,10 @@
-const CSV_PATH = "data/roster.csv";
+const CSV_PATH = "data/lucky-draw.csv";
 /** Total unique winners to pick this round (one per click). Change in code if needed. */
 const PICK_COUNT = 10;
-const STORAGE_KEY = "ipl2026-random-picker-v1";
+const STORAGE_KEY = "ipl2026-random-picker-v2";
 
-const NAME_COLUMNS = ["Member Name", "Name", "Full Name", "member name"];
-const EMAIL_COLUMNS = ["Member Email", "Email", "email", "member email"];
+const NAME_COLUMNS = ["Full Name", "Member Name", "Name", "member name"];
+const EMAIL_COLUMNS = ["Email ID", "Member Email", "Email", "email", "member email"];
 const LEAGUE_COLUMNS = ["Winner League", "League", "winner league"];
 const TEAM_COLUMNS = ["Team Name", "Team", "team name"];
 
@@ -365,7 +365,7 @@ async function bootstrap() {
     const people = await loadCsvFromUrl(CSV_PATH);
     setPeople(people);
   } catch {
-    els.statusLine.textContent = "Roster unavailable. Check data/roster.csv and redeploy.";
+    els.statusLine.textContent = "Roster unavailable. Check data/lucky-draw.csv and redeploy.";
     state.allPeople = [];
     state.pool = [];
     updateUi();
