@@ -3,8 +3,10 @@ const CSV_PATH = "data/lucky-draw.csv";
 const PICK_COUNT = 10;
 const STORAGE_KEY = "ipl2026-random-picker-v3";
 
-const NAME_COLUMNS = ["Full Name", "Member Name", "Name", "member name"];
-const EMAIL_COLUMNS = ["Email ID", "Member Email", "Email", "email", "member email"];
+// Lucky Draw sheet: column C = Full Name, column D = Email ID (participant).
+// Column B (Email Address) is the submitter's login — ignore it; same laptop submits many people.
+const NAME_COLUMNS = ["Full Name"];
+const EMAIL_COLUMNS = ["Email ID"];
 const LEAGUE_COLUMNS = ["Winner League", "League", "winner league"];
 const TEAM_COLUMNS = ["Team Name", "Team", "team name"];
 
