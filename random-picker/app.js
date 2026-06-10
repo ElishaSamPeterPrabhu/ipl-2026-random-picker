@@ -1,7 +1,7 @@
 const CSV_PATH = "data/lucky-draw.csv";
 /** Total unique winners to pick this round (one per click). Change in code if needed. */
 const PICK_COUNT = 10;
-const STORAGE_KEY = "ipl2026-random-picker-v3";
+const STORAGE_KEY = "ipl2026-random-picker-v4";
 
 // Lucky Draw sheet: column C = Full Name, column D = Email ID (participant).
 // Column B (Email Address) is the submitter's login — ignore it; same laptop submits many people.
