@@ -1,0 +1,95 @@
+@import url("https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap");
+
+:root {
+  --matrix-green: #00ff41;
+  --matrix-green-dim: rgba(0, 255, 65, 0.7);
+  --matrix-glow: 0 0 8px rgba(0, 255, 65, 0.6), 0 0 24px rgba(0, 255, 65, 0.25);
+}
+
+body {
+  font-family: "Share Tech Mono", "Courier New", monospace;
+}
+
+#matrix-canvas {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  opacity: 0.35;
+  pointer-events: none;
+}
+
+.scanlines {
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background: repeating-linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0.12) 0px,
+    rgba(0, 0, 0, 0.12) 1px,
+    transparent 1px,
+    transparent 3px
+  );
+}
+
+.matrix-title,
+.matrix-display {
+  text-shadow: var(--matrix-glow);
+}
+
+.matrix-panel {
+  background: rgba(0, 0, 0, 0.72);
+  border: 1px solid rgba(0, 255, 65, 0.45);
+  box-shadow: inset 0 0 30px rgba(0, 255, 65, 0.05), var(--matrix-glow);
+  backdrop-filter: blur(4px);
+}
+
+.matrix-label {
+  font-family: "Share Tech Mono", monospace;
+}
+
+.matrix-btn {
+  border: 1px solid var(--matrix-green);
+  background: rgba(0, 255, 65, 0.08);
+  color: var(--matrix-green);
+  font-family: inherit;
+  transition: background 0.2s, box-shadow 0.2s, opacity 0.2s;
+}
+
+.matrix-btn:hover:not(:disabled) {
+  background: rgba(0, 255, 65, 0.18);
+  box-shadow: var(--matrix-glow);
+}
+
+.matrix-btn:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+.matrix-btn-secondary {
+  border-color: rgba(0, 255, 65, 0.5);
+  color: var(--matrix-green-dim);
+}
+
+.matrix-input::-webkit-outer-spin-button,
+.matrix-input::-webkit-inner-spin-button {
+  opacity: 0.6;
+}
+
+#picked-list li {
+  border-left: 2px solid rgba(0, 255, 65, 0.35);
+  padding-left: 0.75rem;
+}
+
+#display-name.scrambling {
+  animation: flicker 0.08s infinite alternate;
+}
+
+@keyframes flicker {
+  from {
+    opacity: 0.85;
+  }
+  to {
+    opacity: 1;
+  }
+}
