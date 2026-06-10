@@ -1,7 +1,7 @@
 const CSV_PATH = "data/lucky-draw.csv";
 /** Total unique winners to pick this round (one per click). Change in code if needed. */
 const PICK_COUNT = 10;
-const STORAGE_KEY = "ipl2026-random-picker-v2";
+const STORAGE_KEY = "ipl2026-random-picker-v3";
 
 const NAME_COLUMNS = ["Full Name", "Member Name", "Name", "member name"];
 const EMAIL_COLUMNS = ["Email ID", "Member Email", "Email", "email", "member email"];
